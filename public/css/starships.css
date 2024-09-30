@@ -1,0 +1,61 @@
+body {
+    background-color: #0D1B2A; /* Fundo azul escuro */
+    color: #FFFFFF; /* Texto branco */
+    font-family: 'Arial', sans-serif; /* Fonte moderna */
+}
+
+h1 {
+    color: #F0F3BD; /* Título em amarelo pálido */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #1B2631; /* Azul royal */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #2C3E50; /* Azul mais escuro ao passar o mouse */
+}
+
+.table {
+    background-color: #1B2631; /* Fundo da tabela */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th, .table td {
+    color: #FFFFFF;
+    border: none;
+    padding: 12px;
+}
+
+.table th {
+    background-color: #0D1B2A; /* Fundo das células de cabeçalho */
+}
+
+.table tr:hover {
+    background-color: #2C3E50; /* Cor ao passar o mouse nas linhas */
+}
+
+.btn-info {
+    background-color: #3498DB; /* Azul claro */
+}
+
+.btn-warning {
+    background-color: #E67E22; /* Laranja */
+}
+
+.btn-danger {
+    background-color: #E74C3C; /* Vermelho */
+}
+
+.modal-content {
+    background-color: #1B2631; /* Fundo do modal */
+    color: #FFFFFF; /* Texto no modal */
+}
+
+.text-red {
+    color: red;
+}
