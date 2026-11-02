@@ -1,106 +1,82 @@
-# 🚀 Starship System
+# Starships — gestão de espaçonaves
 
-Bem-vindo ao **Starship System**! Este projeto foi desenvolvido como parte de um teste técnico. Ele simula um sistema de
-gestão de espaçonaves onde é possível visualizar, adicionar, editar e remover espaçonaves.
+Aplicação desenvolvida como teste técnico para listar, consultar, cadastrar, editar e remover espaçonaves. Combina uma aplicação Laravel com interface em jQuery/Bootstrap e um serviço de dados local executado com JSON Server.
 
-## 🛠 Tecnologias Utilizadas
+## Tecnologias
 
-- **PHP 7.4**: Linguagem principal utilizada para o backend.
-- **Laravel 8.x**: Framework PHP utilizado para a arquitetura RESTful da API.
-- **JSON Server**: Utilizado para simular uma API REST baseada em um arquivo JSON.
-- **JavaScript (jQuery)**: Utilizado no frontend para interagir com a API.
-- **HTML/CSS/Bootstrap**: Para a interface e estilização das páginas.
+| Componente | Tecnologia utilizada no projeto |
+| --- | --- |
+| Back-end | PHP 7.4 e Laravel 8.x |
+| Interface | JavaScript, jQuery, HTML, CSS e Bootstrap |
+| Serviço de dados local | JSON Server, com `database/db.json` |
+| Dependências | Composer e npm |
 
-## ⚙️ Funcionalidades
+Este repositório mantém a stack original do teste. As versões acima descrevem o contexto de desenvolvimento, não uma recomendação para novos projetos em produção.
 
-- **Listagem de espaçonaves**: Veja todas as espaçonaves disponíveis no sistema.
-- **Visualização detalhada**: Abra um modal para visualizar informações detalhadas de cada espaçonave.
-- **Adicionar espaçonaves**: Cadastre novas espaçonaves através de um formulário.
-- **Editar espaçonaves**: Edite os dados de espaçonaves existentes.
-- **Remover espaçonaves**: Exclua espaçonaves indesejadas da listagem.
+## Funcionalidades
 
-## 📂 Estrutura do Projeto
+- Listagem de espaçonaves.
+- Consulta dos detalhes em um modal.
+- Cadastro e edição de registros.
+- Exclusão de espaçonaves pela interface.
 
-```bash
-.
-├── app/               # Diretório do Laravel
-├── resources/views    # Arquivos frontend (views)
-├── routes/            # Rotas da API
-├── public/            # Arquivos públicos acessíveis (CSS)
-├── database/          # Arquivos relacionados ao banco de dados (db.json para o JSON Server)
-└── README.md          # Este arquivo
-```
+## Como executar
 
-## 🚀 Como Executar o Projeto
-
-### 1. Clone o repositório
+### 1. Preparar a aplicação
 
 ```bash
 git clone https://github.com/kellyane01/starships.git
-cd starship
-```
-
-### 2. Instale as dependências do Laravel
-
-Para instalar as dependências do projeto Laravel, execute o seguinte comando no diretório raiz:
-
-```bash
+cd starships
 composer install
-```
-
-### 3. Configure o arquivo .env
-
-Renomeie o arquivo .env.example para .env:
-
-```bash
 cp .env.example .env
-```
-
-Em seguida, gere a chave da aplicação:
-
-```bash
 php artisan key:generate
 ```
 
-### 4. Instale as dependências do frontend (opcional)
+No PowerShell, use `Copy-Item .env.example .env` no lugar de `cp`, se necessário. Confira as configurações locais do `.env` antes de iniciar a aplicação.
+
+### 2. Preparar os recursos de front-end, quando necessário
 
 ```bash
 npm install
 ```
 
-### 5. Inicie o servidor Laravel
+### 3. Iniciar o JSON Server
 
-Agora você pode iniciar o servidor local do Laravel:
-
-```bash
-php artisan serve
-```
-
-Isso deve iniciar o servidor na URL:
-
-```arduino
-http://localhost:8000
-```
-
-### 6. Execute o JSON Server
-
-Inicie o JSON Server para servir o arquivo db.json:
+O JSON Server precisa estar instalado em uma versão compatível com a sintaxe utilizada pelo projeto:
 
 ```bash
 json-server --watch database/db.json
 ```
 
-Isso vai iniciar o servidor de API simulada em:
+O serviço de dados é disponibilizado em `http://localhost:3000`.
 
-```arduino
-http://localhost:3000
+Confira as versões de Node.js, npm e JSON Server separadamente: `node --version`, `npm --version` e `json-server --version`. O projeto original não registra uma matriz de versões validada para esses três componentes.
+
+### 4. Iniciar o Laravel em outro terminal
+
+```bash
+php artisan serve
 ```
 
-**Atenção**: caso o comando acima estoure um erro, verifique a versão do npm. Versão esperada: ^18.
+Acesse `http://localhost:8000`. Mantenha o Laravel e o JSON Server em execução para utilizar a interface.
 
-### 7. Acesse o projeto
-Agora, você pode acessar o frontend do projeto via Laravel e as rotas da API JSON Server para listar e gerenciar as espaçonaves.
+## Organização
 
-## 🛠 Comandos Úteis
-- Iniciar o servidor Laravel: `php artisan serve`
-- Iniciar o JSON Server: `json-server --watch database/db.json`
+| Diretório | Responsabilidade |
+| --- | --- |
+| `app/` | Código da aplicação Laravel |
+| `resources/views/` | Telas e integração da interface |
+| `routes/` | Definição de rotas |
+| `public/` | Recursos públicos |
+| `database/` | Arquivos de dados, incluindo `db.json` |
+| `tests/` | Estrutura de testes do projeto |
+
+## Contexto e evolução
+
+O JSON Server permite executar o teste com uma API de dados local. A versão atual não representa um serviço de produção com garantias de disponibilidade ou persistência gerenciada.
+
+Uma evolução possível é atualizar a stack, substituir a simulação por persistência própria e acrescentar testes para os fluxos de cadastro e integração. Essas melhorias não estão sendo apresentadas como já implementadas nesta versão.
+
+## Autoria
+
+[Brena Kellyane](https://github.com/kellyane01) · [LinkedIn](https://www.linkedin.com/in/brena-k-43b161198/)
